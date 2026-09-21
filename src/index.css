@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-blossom-50 text-blossom-900 antialiased;
+  background-image:
+    radial-gradient(1200px 600px at 10% -10%, rgba(255, 107, 157, 0.22), transparent 55%),
+    radial-gradient(900px 500px at 110% 0%, rgba(167, 139, 250, 0.18), transparent 50%),
+    radial-gradient(700px 400px at 50% 110%, rgba(255, 160, 194, 0.25), transparent 50%);
+}
+
+@layer components {
+  .card {
+    @apply rounded-3xl bg-white p-5 shadow-card ring-1 ring-blossom-100;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-blossom-600 px-5 py-2.5 text-sm font-bold text-white shadow-card transition hover:bg-blossom-700 active:scale-[0.98] disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-semibold text-blossom-700 ring-1 ring-blossom-100 transition hover:bg-white;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold;
+  }
+}
+
+input,
+textarea,
+button {
+  @apply outline-none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-blossom-200;
+}
